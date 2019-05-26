@@ -1,5 +1,5 @@
 html{box-sizing:border-box}
 body{margin:4%}
-a{font:22px 'Convergence';background-color:transparent;text-decoration:none}
+a{font:22px 'Convergence', sans-serif;background-color:transparent;text-decoration:none}
 a:hover{text-decoration:underline}
-pre{width:480px;font:15px 'Inconsolata';background-color:#eee;padding:10px;border:1px solid #eee;border-radius:4px}
+pre{width:480px;font:15px 'Inconsolata', monospace;background-color:#eee;padding:10px;border:1px solid #eee;border-radius:4px}
