@@ -1,5 +1,7 @@
 html{box-sizing:border-box}
-body{margin:4%}
-a{font:22px 'Convergence', sans-serif;background-color:transparent;text-decoration:none}
+body{margin:2em}
+a{font-family:'Convergence';background-color:transparent;text-decoration:none}
 a:hover{text-decoration:underline}
-pre{width:480px;font:15px 'Inconsolata', monospace;background-color:#eee;padding:10px;border:1px solid #eee;border-radius:4px}
+pre{font-family:'Inconsolata';background-color:#eee;padding:10px;border:1px solid #eee;border-radius:4px}
+@media screen and (max-width:600px) {a{font-size:16px}pre{width:350px;font-size:11px}}
+@media screen and (min-width:600px) {a{font-size:22px}pre{width:480px;font-size:15px}}
