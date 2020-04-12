@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'none'; base-uri 'none'; font-src 'self' https://fonts.gstatic.com; form-action 'none'; frame-ancestors 'none'; style-src 'self' https://fonts.googleapis.com; block-all-mixed-content
+  Content-Security-Policy: default-src 'none'; base-uri 'none'; font-src 'self' https://fonts.gstatic.com; form-action 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; block-all-mixed-content
   Expect-CT: max-age=86400, enforce
   Referrer-Policy: no-referrer
   Set-Cookie: __Secure-Path=/;Secure;HttpOnly;SameSite=Strict
