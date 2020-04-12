@@ -1,7 +1,8 @@
+*{font-family:'Convergence'}
 html{box-sizing:border-box}
 body{margin:2em}
-a{font-family:'Convergence';background-color:transparent;text-decoration:none}
+a{background-color:transparent;text-decoration:none}
 a:hover{text-decoration:underline}
 pre{font-family:'Inconsolata';background-color:#eee;padding:10px;border:1px solid #eee;border-radius:4px}
-@media screen and (max-width:600px) {a{font-size:16px}pre{width:318px;font-size:10px}}
-@media screen and (min-width:600px) {a{font-size:22px}pre{width:480px;font-size:15px}}
+@media screen and (max-width:600px) {*{font-size:16px}pre{width:318px;font-size:10px}}
+@media screen and (min-width:600px) {*{font-size:22px}pre{width:480px;font-size:15px}}
