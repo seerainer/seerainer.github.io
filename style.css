@@ -3,6 +3,6 @@ html{box-sizing:border-box}
 body{margin:2em}
 a{background-color:transparent;text-decoration:none}
 a:hover{text-decoration:underline}
-pre{font-family:'Inconsolata';background-color:#eee;padding:10px;border:1px solid #eee;border-radius:4px}
-@media screen and (max-width:600px) {*{font-size:16px}pre{width:318px;font-size:10px}}
-@media screen and (min-width:600px) {*{font-size:22px}pre{width:480px;font-size:15px}}
+pre{font-family:monospace;background-color:#ddd;padding:10px;border-radius:6px}
+@media screen and (max-width:600px) {*{font-size:16px}pre{width:358px;font-size:10px}}
+@media screen and (min-width:600px) {*{font-size:22px}pre{width:457px;font-size:13px}}
