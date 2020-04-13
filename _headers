@@ -1,7 +1,6 @@
 /*
   Content-Security-Policy: default-src 'none'; base-uri 'none'; font-src 'self' https://fonts.gstatic.com; form-action 'none'; frame-ancestors 'none'; img-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; block-all-mixed-content
   Expect-CT: max-age=86400, enforce
-  FileETag: None
   Referrer-Policy: no-referrer
   Set-Cookie: __Secure-Path=/;Secure;HttpOnly;SameSite=Strict
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
