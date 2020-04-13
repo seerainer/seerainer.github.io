@@ -1,8 +1,8 @@
-*{font-family:'Convergence', sans-serif}
+*{font-family:'Convergence'}
 html{box-sizing:border-box}
 body{margin:2em}
 a{background-color:transparent;text-decoration:none}
 a:hover{text-decoration:underline}
-pre{font-family:'Consolas', monospace;background-color:#ddd;padding:10px;border-radius:6px}
-@media screen and (max-width:600px) {*{font-size:16px}pre{width:358px;font-size:10px}}
-@media screen and (min-width:600px) {*{font-size:22px}pre{width:457px;font-size:13px}}
+pre{font-family:'Inconsolata';background-color:#ddd;padding:10px;border-radius:6px}
+@media screen and (max-width:600px) {*{font-size:16px}pre{width:352px;font-size:11px}}
+@media screen and (min-width:600px) {*{font-size:22px}pre{width:416px;font-size:13px}}
