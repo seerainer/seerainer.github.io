@@ -1,5 +1,5 @@
-@font-face{font-family:Convergence;src:url(/Convergence.woff2)}
-@font-face{font-family:Inconsolata;src:url(/Inconsolata.woff2)}
+@font-face{font-family:Convergence;src:url(Convergence.woff2)}
+@font-face{font-family:Inconsolata;src:url(Inconsolata.woff2)}
 html{box-sizing:border-box}
 body{margin:2em}
 a{background-color:transparent;text-decoration:none}
