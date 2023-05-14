@@ -1,6 +1,8 @@
 /*
-  Content-Security-Policy: default-src 'none'; base-uri 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'self'; img-src 'self'; script-src 'self'; style-src 'self'; block-all-mixed-content
+  Access-Control-Allow-Origin: https://www.seerainer.com
+  Content-Security-Policy: default-src 'none'; base-uri 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'self'; img-src 'self'; script-src 'self'; style-src 'self'
   Expect-CT: max-age=86400, enforce
+  Permissions-Policy: camera=(), geolocation=(), microphone=()
   Referrer-Policy: no-referrer
   Set-Cookie: __Secure-Path=/;Secure;HttpOnly;SameSite=Strict
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
