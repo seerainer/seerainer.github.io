@@ -7,6 +7,7 @@ a:hover{text-decoration:underline}
 p{font-family:convergence}
 details>summary{font-family:inconsolata;padding:10px;border:none;cursor:pointer;box-shadow:1px 1px 2px #999}
 pre{font-family:inconsolata;padding:10px;margin:0;box-shadow:1px 1px 2px #999}
+#nojs{display:none}
 @media screen and (max-width:600px){p{font-size:16px}details>summary{width:320px;font-size:13px}pre{width:320px;font-size:10px}}
 @media screen and (min-width:600px){p{font-size:22px}details>summary{width:416px;font-size:16px}pre{width:416px;font-size:13px}}
 @media (prefers-color-scheme:dark) {
