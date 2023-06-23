@@ -13,9 +13,11 @@ pre{font-family:inconsolata;padding:10px;margin:0;box-shadow:1px 1px 2px #999}
     body{background-color:#111;color:#fff}
     details>summary{background-color:#555}
     pre{background-color:#555}
+    a{color:#0af}
 }
 @media (prefers-color-scheme:light) {
-    body{background-color:#fff;color:#000}
-    details>summary{background-color:#ddd}
-    pre{background-color:#ddd}
+    body{background-color:#eee;color:#000}
+    details>summary{background-color:#ccc}
+    pre{background-color:#ccc}
+    a{color:#06c}
 }
