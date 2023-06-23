@@ -1,4 +1,4 @@
-document.getElementById("nojs").removeAttribute("id");
+document.getElementsByTagName("details")[0].style.display = "block";
 const m = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
 const e = document.createElement("a");
 const p = document.getElementsByTagName("p")[0];
