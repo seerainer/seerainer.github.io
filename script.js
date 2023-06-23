@@ -1,3 +1,4 @@
+document.getElementById("nojs").removeAttribute("id");
 const m = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
 const e = document.createElement("a");
 const p = document.getElementsByTagName("p")[0];
