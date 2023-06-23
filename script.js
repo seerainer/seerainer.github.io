@@ -14,10 +14,10 @@ d.onclick = () => {
         r.moveToElementText(n);
         r.select();
     } else if (window.getSelection) {
-        const selection = window.getSelection();
+        const s = window.getSelection();
         const r = document.createRange();
         r.selectNodeContents(n);
-        selection.removeAllRanges();
-        selection.addRange(r);
+        s.removeAllRanges();
+        s.addRange(r);
     }
 }
