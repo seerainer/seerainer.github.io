@@ -14,7 +14,7 @@ pre{font-family:inconsolata;padding:10px;margin:0;box-shadow:1px 1px 2px #999}
     body{background-color:#111;color:#fff}
     details>summary{background-color:#555}
     pre{background-color:#555}
-    a{color:#0af}
+    a{color:#c60}
 }
 @media (prefers-color-scheme:light) {
     body{background-color:#eee;color:#000}
