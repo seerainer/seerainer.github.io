@@ -1,24 +1,97 @@
-@font-face{font-family:convergence;src:url(Convergence.woff2)}
-@font-face{font-family:inconsolata;src:url(Inconsolata.woff2)}
-html{box-sizing:border-box}
-body{margin:2em}
-a{font-family:convergence;background-color:transparent;text-decoration:none}
-a:hover{text-decoration:underline}
-p{font-family:convergence}
-details{display:none}
-details>summary{font-family:inconsolata;padding:10px;border:none;cursor:pointer;box-shadow:1px 1px 2px #999}
-pre{font-family:inconsolata;padding:10px;margin:0;box-shadow:1px 1px 2px #999}
-@media screen and (max-width:600px){p{font-size:16px}details>summary{width:320px;font-size:13px}pre{width:320px;font-size:10px}}
-@media screen and (min-width:600px){p{font-size:22px}details>summary{width:416px;font-size:16px}pre{width:416px;font-size:13px}}
+@font-face {
+    font-family:convergence;
+    src:url(Convergence.woff2);
+}
+@font-face {
+    font-family:inconsolata;
+    src:url(Inconsolata.woff2);
+}
+html {
+    box-sizing:border-box;
+}
+body {
+    margin:2em;
+}
+a {
+    font-family:convergence;
+    background-color:transparent;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
+p {
+    font-family:convergence;
+}
+details {
+    display:none;
+}
+details>summary {
+    font-family:inconsolata;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+    box-shadow:1px 1px 2px #999;
+}
+pre {
+    font-family:inconsolata;
+    padding:10px;
+    margin:0;
+    box-shadow:1px 1px 2px #999;
+}
+@media screen and (max-width:600px) {
+    p {
+        font-size:16px;
+    }
+    details>summary {
+        width:320px;
+        font-size:13px;
+    }
+    pre {
+        width:320px;
+        font-size:10px;
+    }
+}
+@media screen and (min-width:600px) {
+    p {
+        font-size:22px;
+    }
+    details>summary {
+        width:416px;
+        font-size:16px;
+    }
+    pre {
+        width:416px;
+        font-size:13px;
+    }
+}
 @media (prefers-color-scheme:dark) {
-    body{background-color:#111;color:#fff}
-    details>summary{background-color:#555}
-    pre{background-color:#555}
-    a{color:#c60}
+    body {
+        background-color:#111;
+        color:#fff;
+    }
+    details>summary {
+        background-color:#555;
+    }
+    pre {
+        background-color:#555;
+    }
+    a {
+        color:#c60;
+    }
 }
 @media (prefers-color-scheme:light) {
-    body{background-color:#eee;color:#000}
-    details>summary{background-color:#ccc}
-    pre{background-color:#ccc}
-    a{color:#06c}
+    body {
+        background-color:#eee;
+        color:#000;
+    }
+    details>summary {
+        background-color:#ccc;
+    }
+    pre {
+        background-color:#ccc;
+    }
+    a {
+        color:#06c;
+    }
 }
