@@ -1,9 +1,16 @@
 @font-face {
     font-family:convergence;
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
     src:url(Convergence.woff2);
 }
 @font-face {
     font-family:inconsolata;
+    font-style:normal;
+    font-weight:400;
+    font-stretch:100%;
+    font-display:swap;
     src:url(Inconsolata.woff2);
 }
 html {
