@@ -1,9 +1,9 @@
 @font-face {
-    font-family:convergence, sans-serif;
+    font-family:convergence;
     src:url(Convergence.woff2);
 }
 @font-face {
-    font-family:inconsolata, monospace;
+    font-family:inconsolata;
     src:url(Inconsolata.woff2);
 }
 html {
