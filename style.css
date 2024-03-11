@@ -1,16 +1,9 @@
 @font-face {
     font-family:convergence;
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
     src:url(Convergence.woff2);
 }
 @font-face {
     font-family:inconsolata;
-    font-style:normal;
-    font-weight:400;
-    font-stretch:100%;
-    font-display:swap;
     src:url(Inconsolata.woff2);
 }
 html {
@@ -27,9 +20,6 @@ a {
 a:hover {
     text-decoration:underline;
 }
-p {
-    font-family:convergence;
-}
 details {
     display:none;
 }
@@ -39,6 +29,18 @@ details>summary {
     border:none;
     cursor:pointer;
     box-shadow:1px 1px 2px #999;
+}
+img {
+    border-style:none;
+    max-width:100%;
+    height:auto;
+    opacity:0.5;
+    position:absolute;
+    top:16px;
+    right:16px;
+}
+p {
+    font-family:convergence;
 }
 pre {
     font-family:inconsolata;
@@ -86,6 +88,9 @@ pre {
     a {
         color:#c60;
     }
+    #dark {
+        display:none;
+    }
 }
 @media (prefers-color-scheme:light) {
     body {
@@ -100,5 +105,8 @@ pre {
     }
     a {
         color:#06c;
+    }
+    #light {
+        display:none;
     }
 }
