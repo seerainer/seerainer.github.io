@@ -34,10 +34,14 @@ img {
     border-style:none;
     max-width:100%;
     height:auto;
-    opacity:0.5;
+    opacity:0.3;
     position:absolute;
     top:16px;
     right:16px;
+    transition:0.5s;
+}
+img:hover {
+    opacity:0.5;
 }
 p {
     font-family:convergence;
