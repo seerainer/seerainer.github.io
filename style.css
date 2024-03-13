@@ -92,7 +92,7 @@ pre {
     a {
         color:#c60;
     }
-    #dark {
+    img[alt="dark"] {
         display:none;
     }
 }
@@ -110,7 +110,7 @@ pre {
     a {
         color:#06c;
     }
-    #light {
+    img[alt="light"] {
         display:none;
     }
 }
