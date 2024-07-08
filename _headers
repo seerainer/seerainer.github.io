@@ -1,5 +1,7 @@
 /*
   Content-Security-Policy: default-src 'none'; base-uri 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self'; script-src 'self'; style-src 'self'
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
   Expect-CT: max-age=86400, enforce
   Permissions-Policy: camera=(), geolocation=(), microphone=()
   Referrer-Policy: no-referrer
