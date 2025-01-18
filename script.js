@@ -30,7 +30,7 @@ if (p) {
 
     function showText() {
         if (index < t.length) {
-            p.textContent += t.charAt(index);
+            p.innerHTML += t.charAt(index);
             index++;
             setTimeout(showText, 100);
         }
