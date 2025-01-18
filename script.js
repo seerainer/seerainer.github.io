@@ -26,21 +26,20 @@ link.href = window.atob("bWFpbHRvOg==") + mail;
 const fsname = document.createElement("p");
 fsname.innerText = "Name: Philipp Seerainer";
 const contact = document.createElement("p");
-contact.innerText = "Contact: ${link}";
+contact.innerText = "Contact: ";
+contact.appendChild(link);
 const location = document.createElement("p");
 location.innerText = "Location: Salzburg, Austria";
-const br = document.createElement("br");
-const text = fsname + contact + location + br;
+const text = [fsname, contact, location, br];
 const div = document.querySelector("div");
 if (div) {
     let index = 0;
 
     function showText() {
-        if (index < text.length) {
-            div.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(showText, 100);
-        }
+        div.appendChild(text[index]);
+        div.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(showText, 100);
     }
 
     showText();
