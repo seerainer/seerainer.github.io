@@ -23,9 +23,9 @@ const m = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
 const e = document.createElement("a");
 e.innerText = m;
 e.href = window.atob("bWFpbHRvOg==") + m;
-const p = document.querySelector("p");
+const p = document.querySelector("div");
 if (p) {
-    const t = "<p>Name: Philipp Seerainer</p>\n<p>Contact: " + e + "</p>\n<p>Location: Salzburg, Austria</p>";
+    const t = `<p>Name: Philipp Seerainer</p><p>Contact: ${e}</p><p>Location: Salzburg, Austria</p>`;
     let index = 0;
 
     function showText() {
