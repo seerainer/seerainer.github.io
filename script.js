@@ -1,23 +1,40 @@
-const d = document.getElementsByTagName("details")[0];
+const d = document.querySelector("details");
+if (d) {
+    d.style.display = "block";
+    d.onclick = () => {
+        const n = document.querySelector("pre");
+        if (n) {
+            if (document.body.createTextRange) {
+                const r = document.body.createTextRange();
+                r.moveToElementText(n);
+                r.select();
+            } else if (window.getSelection) {
+                const s = window.getSelection();
+                const r = document.createRange();
+                r.selectNodeContents(n);
+                s.removeAllRanges();
+                s.addRange(r);
+            }
+        }
+    }
+}
+
 const m = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
 const e = document.createElement("a");
-const p = document.getElementsByTagName("p")[0];
-d.style.display = "block";
 e.innerText = m;
 e.href = window.atob("bWFpbHRvOg==") + m;
-p.replaceChild(e, p.children[0]);
-d.onclick = () => {
-    const n = document.getElementsByTagName("pre")[0];
+const p = document.querySelector("p");
+if (p) {
+    const t = "<p>Name: Philipp Seerainer</p>\n<p>Contact: " + e + "</p>\n<p>Location: Salzburg, Austria</p>";
+    let index = 0;
 
-    if (document.body.createTextRange) {
-        const r = document.body.createTextRange();
-        r.moveToElementText(n);
-        r.select();
-    } else if (window.getSelection) {
-        const s = window.getSelection();
-        const r = document.createRange();
-        r.selectNodeContents(n);
-        s.removeAllRanges();
-        s.addRange(r);
+    function showText() {
+        if (index < t.length) {
+            p.textContent += t.charAt(index);
+            index++;
+            setTimeout(showText, 100);
+        }
     }
+
+    showText();
 }
