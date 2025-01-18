@@ -1,8 +1,8 @@
-const details = document.querySelector("details");
+const details = document.getElementsByName("details")[0];
 if (details) {
     details.style.display = "block";
     details.onclick = () => {
-        const pre = document.querySelector("pre");
+        const pre = document.getElementsByTagName("pre")[0];
         if (pre) {
             if (document.body.createTextRange) {
                 const r = document.body.createTextRange();
@@ -30,14 +30,15 @@ contact.innerText = "Contact: ";
 contact.appendChild(link);
 const location = document.createElement("p");
 location.innerText = "Location: Salzburg, Austria";
+const br = document.createElement("br");
 const text = [fsname, contact, location, br];
-const div = document.querySelector("div");
-if (div) {
+const p = document.getElementById("text");
+if (p) {
     let index = 0;
 
     function showText() {
-        div.appendChild(text[index]);
-        div.innerHTML += text.charAt(index);
+        p.appendChild(text[index]);
+        p.innerHTML += text.charAt(index);
         index++;
         setTimeout(showText, 100);
     }
