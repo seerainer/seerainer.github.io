@@ -1,17 +1,17 @@
-const d = document.querySelector("details");
-if (d) {
-    d.style.display = "block";
-    d.onclick = () => {
-        const n = document.querySelector("pre");
-        if (n) {
+const details = document.querySelector("details");
+if (details) {
+    details.style.display = "block";
+    details.onclick = () => {
+        const pre = document.querySelector("pre");
+        if (pre) {
             if (document.body.createTextRange) {
                 const r = document.body.createTextRange();
-                r.moveToElementText(n);
+                r.moveToElementText(pre);
                 r.select();
             } else if (window.getSelection) {
                 const s = window.getSelection();
                 const r = document.createRange();
-                r.selectNodeContents(n);
+                r.selectNodeContents(pre);
                 s.removeAllRanges();
                 s.addRange(r);
             }
@@ -19,18 +19,25 @@ if (d) {
     }
 }
 
-const m = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
-const e = document.createElement("a");
-e.innerText = m;
-e.href = window.atob("bWFpbHRvOg==") + m;
-const p = document.querySelector("div");
-if (p) {
-    const t = `<p>Name: Philipp Seerainer</p><p>Contact: ${e}</p><p>Location: Salzburg, Austria</p>`;
+const mail = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
+const link = document.createElement("a");
+link.innerText = mail;
+link.href = window.atob("bWFpbHRvOg==") + mail;
+const fsname = document.createElement("p");
+fsname.innerText = "Name: Philipp Seerainer";
+const contact = document.createElement("p");
+contact.innerText = "Contact: ${link}";
+const location = document.createElement("p");
+location.innerText = "Location: Salzburg, Austria";
+const br = document.createElement("br");
+const text = fsname + contact + location + br;
+const div = document.querySelector("div");
+if (div) {
     let index = 0;
 
     function showText() {
-        if (index < t.length) {
-            p.innerHTML += t.charAt(index);
+        if (index < text.length) {
+            div.innerHTML += text.charAt(index);
             index++;
             setTimeout(showText, 100);
         }
