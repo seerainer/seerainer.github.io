@@ -1,7 +1,7 @@
-const details = document.getElementsByName("details")[0];
-if (details) {
-    details.style.display = "block";
-    details.onclick = () => {
+const pgp = document.getElementsByName("details")[0];
+if (pgp) {
+    pgp.style.display = "block";
+    pgp.onclick = () => {
         const pre = document.getElementsByTagName("pre")[0];
         if (pre) {
             if (document.body.createTextRange) {
@@ -28,17 +28,17 @@ fsname.innerText = "Name: Philipp Seerainer";
 const contact = document.createElement("p");
 contact.innerText = "Contact: ";
 contact.appendChild(link);
-const location = document.createElement("p");
-location.innerText = "Location: Salzburg, Austria";
+const home = document.createElement("p");
+home.innerText = "Location: Salzburg, Austria";
 const br = document.createElement("br");
-const text = [fsname, contact, location, br];
-const p = document.getElementById("text");
-if (p) {
+const text = [fsname, contact, home, br];
+const textField = document.getElementsByName("p")[0];
+if (textField) {
     let index = 0;
 
     function showText() {
-        p.appendChild(text[index]);
-        p.innerHTML += text.charAt(index);
+        textField.appendChild(text[index]);
+        textField.innerHTML += text.charAt(index);
         index++;
         setTimeout(showText, 100);
     }
