@@ -1,3 +1,5 @@
+const nojs = document.getElementsByTagName("noscript")[0];
+nojs.remove();
 const fsname = "Name: Philipp Seerainer";
 const contact = "Contact: ";
 const mail = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
