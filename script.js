@@ -1,47 +1,58 @@
-const pgp = document.getElementsByName("details")[0];
-if (pgp) {
-    pgp.style.display = "block";
-    pgp.onclick = () => {
-        const pre = document.getElementsByTagName("pre")[0];
-        if (pre) {
-            if (document.body.createTextRange) {
-                const r = document.body.createTextRange();
-                r.moveToElementText(pre);
-                r.select();
-            } else if (window.getSelection) {
-                const s = window.getSelection();
-                const r = document.createRange();
-                r.selectNodeContents(pre);
-                s.removeAllRanges();
-                s.addRange(r);
-            }
-        }
-    }
-}
-
+const fsname = "Name: Philipp Seerainer";
+const contact = "Contact: ";
 const mail = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
 const link = document.createElement("a");
 link.innerText = mail;
 link.href = window.atob("bWFpbHRvOg==") + mail;
-const fsname = document.createElement("p");
-fsname.innerText = "Name: Philipp Seerainer";
-const contact = document.createElement("p");
-contact.innerText = "Contact: ";
-contact.appendChild(link);
-const home = document.createElement("p");
-home.innerText = "Location: Salzburg, Austria";
+const home = "Location: Salzburg, Austria";
+const textElement = document.getElementsByTagName("p")[0];
 const br = document.createElement("br");
-const text = [fsname, contact, home, br];
-const textField = document.getElementsByName("p")[0];
-if (textField) {
-    let index = 0;
+let index = 0;
 
-    function showText() {
-        textField.appendChild(text[index]);
-        textField.innerHTML += text.charAt(index);
+function showText() {
+    if (textElement) {
+        if (index < fsname.length) {
+            textElement.innerHTML += fsname.charAt(index);
+        } else if (index < fsname.length + contact.length) {
+            textElement.innerHTML += contact.charAt(index - fsname.length);
+        } else if (index === fsname.length + contact.length) {
+            textElement.appendChild(link);
+        } else if (index < fsname.length + contact.length + mail.length + home.length) {
+            textElement.innerHTML += home.charAt(index - fsname.length - contact.length - mail.length);
+        } 
+        
+        if (index === fsname.length - 1) {
+            textElement.appendChild(br);
+        }
+        if (index === fsname.length + contact.length + mail.length - 1) {
+            textElement.appendChild(br);
+        }
+        if (index === fsname.length + contact.length + mail.length + home.length - 1) {
+            textElement.appendChild(br);
+        }
+
         index++;
-        setTimeout(showText, 100);
+        setTimeout(showText, 34);
     }
-
-    showText();
 }
+
+const pgpText = document.getElementsByTagName("details")[0];
+if (pgpText) {
+    pgpText.style.display = "block";
+    pgpText.onclick = () => {
+        const pre = document.getElementsByTagName("pre")[0];
+        if (document.body.createTextRange) {
+            const r = document.body.createTextRange();
+            r.moveToElementText(pre);
+            r.select();
+        } else if (window.getSelection) {
+            const s = window.getSelection();
+            const r = document.createRange();
+            r.selectNodeContents(pre);
+            s.removeAllRanges();
+            s.addRange(r);
+        }
+    };
+}
+
+showText();

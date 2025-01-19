@@ -45,10 +45,20 @@ img {
     transition:0.5s;
 }
 img:hover {
-    opacity:0.5;
+    opacity:0.7;
 }
 p {
     font-family:convergence;
+    line-height: 2;
+    animation:fading 1s;
+}
+@keyframes fading {
+    from {
+        opacity:0
+    }
+    to {
+        opacity:1
+    }
 }
 pre {
     font-family:inconsolata;
