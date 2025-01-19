@@ -27,9 +27,6 @@ function showText() {
         if (index === fsname.length + contact.length + mail.length - 1) {
             textElement.appendChild(br);
         }
-        if (index === fsname.length + contact.length + mail.length + home.length - 1) {
-            textElement.appendChild(br);
-        }
 
         index++;
         setTimeout(showText, 34);
