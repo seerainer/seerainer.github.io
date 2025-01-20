@@ -1,4 +1,3 @@
 https://seerainer.netlify.app/* https://www.seerainer.com/:splat 301!
 
 /*  /index.de.html:splat  302  Language=de
-/*  /404.de.html:splat  404  Language=de
