@@ -19,7 +19,7 @@ html {
 }
 body {
     margin:2em;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease-in-out;
 }
 body.light-theme {
     background-color:#eee;

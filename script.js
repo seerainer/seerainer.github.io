@@ -1,10 +1,9 @@
-const nojs = document.getElementsByTagName('noscript')[0];
-if (nojs) {
-    nojs.remove();
-}
-const fsname = 'Name: Philipp Seerainer';
-const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+document.addEventListener('DOMContentLoaded', () => {
+    const nojs = document.querySelector('noscript');
+    if (nojs) nojs.remove();
 
+    const fsname = 'Name: Philipp Seerainer';
+    const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEYrzIqxYJKwYBBAHaRw8BAQdA7IsFT4l1unJVRExP6eqTy2rJ4HxIL4Zwba8r
 eb2hTfG0KVBoaWxpcHAgU2VlcmFpbmVyIDxwaGlsaXBwQHNlZXJhaW5lci5jb20+
 iJMEExYKADsWIQSE+vhVj6RICLFOnLCuID1NlOIobQUCYrzIqwIbIwULCQgHAgIi
@@ -16,49 +15,55 @@ YrzIqwIbDAAKCRCuID1NlOIobe0kAP9BmLHOxHtfFyCJO0d+/jv9rT2gCtqycZct
 phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
 =Z83F
 -----END PGP PUBLIC KEY BLOCK-----`;
-let home = 'Location: Salzburg, Austria';
-let contact = 'Contact: ';
-let theme = 'Toggle theme';
+    const home = navigator.language === 'de' ? 'Ort: Salzburg, Österreich' : 'Location: Salzburg, Austria';
+    const contact = navigator.language === 'de' ? 'Kontakt: ' : 'Contact: ';
+    const theme = navigator.language === 'de' ? 'Design wechseln' : 'Toggle theme';
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const themeElement = 'theme-element';
+    const mail = window.atob('cGhpbGlwcEBzZWVyYWluZXIuY29t');
+    const link = document.createElement('a');
+    link.className = themeElement;
+    link.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
+    link.innerText = mail;
+    link.href = window.atob('bWFpbHRvOg==') + mail;
 
-if (navigator.language === 'de') {
-    home = 'Ort: Salzburg, Österreich';
-    contact = 'Kontakt: ';
-    theme = 'Design wechseln';
-}
+    const textElement = document.querySelector('p');
+    const pgpText = document.querySelector('details');
+    const button = document.querySelector('button');
+    const images = document.querySelectorAll('img');
+    const summary = document.createElement('summary');
+    summary.className = themeElement;
+    summary.innerText = 'PGP';
+    const pre = document.createElement('pre');
+    pre.className = themeElement;
+    pre.innerText = pgpKey;
 
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme:dark)').matches;
-const themeElement = 'theme-element';
-const mail = window.atob('cGhpbGlwcEBzZWVyYWluZXIuY29t');
-const link = document.createElement('a');
-link.className = themeElement;
-if (prefersDarkScheme) {
-    link.classList.add('dark-theme');
-} else {
-    link.classList.add('light-theme');
-}
-link.innerText = mail;
-link.href = window.atob('bWFpbHRvOg==') + mail;
-const textElement = document.getElementsByTagName('p')[0];
-const pgpText = document.getElementsByTagName('details')[0];
-pgpText.className = themeElement;
-const button = document.getElementsByTagName('button')[0];
-button.title = theme;
-const image = 'img';
-const image1 = document.getElementsByTagName(image)[0];
-image1.className = themeElement;
-const image2 = document.getElementsByTagName(image)[1];
-image2.className = themeElement;
-const br = document.createElement('br');
-const summary = document.createElement('summary');
-summary.className = themeElement;
-summary.innerText = 'PGP';
-const pre = document.createElement('pre');
-pre.className = themeElement;
-pre.innerText = pgpKey;
-let index = 0;
+    [pgpText, ...images].forEach(el => el.className = themeElement);
+    pgpText.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
+    button.innerText = '\uD83D\uDD06';
+    button.title = theme;
 
-function showText() {
-    if (textElement) {
+    button.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        document.body.classList.toggle('light-theme');
+        document.querySelectorAll('.theme-element').forEach(el => {
+            el.classList.toggle('dark-theme');
+            el.classList.toggle('light-theme');
+        });
+    });
+
+    pgpText.style.display = 'block';
+    pgpText.append(summary, pre);
+    pgpText.addEventListener('click', () => {
+        const range = document.createRange();
+        range.selectNodeContents(pre);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+    });
+
+    let index = 0;
+    function showText() {
         if (index < fsname.length) {
             textElement.innerHTML += fsname.charAt(index);
         } else if (index < fsname.length + home.length) {
@@ -66,64 +71,19 @@ function showText() {
         } else if (index < fsname.length + home.length + contact.length) {
             textElement.innerHTML += contact.charAt(index - fsname.length - home.length);
         } else if (index === fsname.length + home.length + contact.length) {
-            textElement.appendChild(link);
+            textElement.append(link);
         }
-
-        if (index === fsname.length - 1) {
-            textElement.appendChild(br);
+        if (index === fsname.length - 1 || index === fsname.length + home.length - 1) {
+            textElement.appendChild(document.createElement('br'));
         }
-        if (index === fsname.length + home.length - 1) {
-            textElement.appendChild(br);
-        }
-
         index++;
         setTimeout(showText, 34);
     }
-}
 
-if (button) {
-    button.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        document.body.classList.toggle('light-theme');
-
-        document.querySelectorAll('.theme-element').forEach(element => {
-            element.classList.toggle('dark-theme');
-            element.classList.toggle('light-theme');
-        });
+    document.body.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
+    document.querySelectorAll('.theme-element').forEach(el => {
+        el.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
     });
-}
 
-if (pgpText) {
-    pgpText.style.display = 'block';
-    pgpText.appendChild(summary);
-    pgpText.appendChild(pre);
-    pgpText.onclick = () => {
-        if (document.body.createTextRange) {
-            const r = document.body.createTextRange();
-            r.moveToElementText(pre);
-            r.select();
-        } else if (window.getSelection) {
-            const s = window.getSelection();
-            const r = document.createRange();
-            r.selectNodeContents(pre);
-            s.removeAllRanges();
-            s.addRange(r);
-        }
-    };
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (prefersDarkScheme) {
-        document.body.classList.add('dark-theme');
-        document.querySelectorAll('.theme-element').forEach(element => {
-            element.classList.add('dark-theme');
-        });
-    } else {
-        document.body.classList.add('light-theme');
-        document.querySelectorAll('.theme-element').forEach(element => {
-            element.classList.add('light-theme');
-        });
-    }
+    showText();
 });
-
-showText();
