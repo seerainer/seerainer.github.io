@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nojs = document.querySelector('noscript');
     if (nojs) nojs.remove();
-
+    
     const fsname = 'Name: Philipp Seerainer';
     const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEYrzIqxYJKwYBBAHaRw8BAQdA7IsFT4l1unJVRExP6eqTy2rJ4HxIL4Zwba8r
@@ -15,15 +15,18 @@ YrzIqwIbDAAKCRCuID1NlOIobe0kAP9BmLHOxHtfFyCJO0d+/jv9rT2gCtqycZct
 phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
 =Z83F
 -----END PGP PUBLIC KEY BLOCK-----`;
-    const home = navigator.language === 'de' ? 'Ort: Salzburg, Österreich' : 'Location: Salzburg, Austria';
-    const contact = navigator.language === 'de' ? 'Kontakt: ' : 'Contact: ';
-    const theme = navigator.language === 'de' ? 'Design wechseln' : 'Toggle theme';
+    const langDE = navigator.language === 'de';    
+    const home = langDE ? 'Ort: Salzburg, Österreich' : 'Location: Salzburg, Austria';
+    const contact = langDE ? 'Kontakt: ' : 'Contact: ';
+    const theme = langDE ? 'Design wechseln' : 'Toggle theme';
+    const darkTheme = 'dark-theme';
+    const lightTheme = 'light-theme';
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const themeElement = 'theme-element';
     const mail = window.atob('cGhpbGlwcEBzZWVyYWluZXIuY29t');
     const link = document.createElement('a');
     link.className = themeElement;
-    link.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
+    link.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     link.innerText = mail;
     link.href = window.atob('bWFpbHRvOg==') + mail;
 
@@ -39,16 +42,16 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     pre.innerText = pgpKey;
 
     [pgpText, ...images].forEach(el => el.className = themeElement);
-    pgpText.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
+    pgpText.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     button.innerText = '\uD83D\uDD06';
     button.title = theme;
 
     button.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        document.body.classList.toggle('light-theme');
+        document.body.classList.toggle(darkTheme);
+        document.body.classList.toggle(lightTheme);
         document.querySelectorAll('.theme-element').forEach(el => {
-            el.classList.toggle('dark-theme');
-            el.classList.toggle('light-theme');
+            el.classList.toggle(darkTheme);
+            el.classList.toggle(lightTheme);
         });
     });
 
@@ -80,9 +83,10 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
         setTimeout(showText, 34);
     }
 
-    document.body.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
+    document.querySelector('html').lang = langDE ? 'de' : 'en';
+    document.body.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     document.querySelectorAll('.theme-element').forEach(el => {
-        el.classList.add(prefersDarkScheme ? 'dark-theme' : 'light-theme');
+        el.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     });
 
     showText();
