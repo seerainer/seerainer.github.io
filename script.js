@@ -1,12 +1,12 @@
 const nojs = document.getElementsByTagName("noscript")[0];
 nojs.remove();
 const fsname = "Name: Philipp Seerainer";
-const contact = "Contact: ";
+let contact = "Contact: ";
 const mail = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
 const link = document.createElement("a");
 link.innerText = mail;
 link.href = window.atob("bWFpbHRvOg==") + mail;
-const home = "Location: Salzburg, Austria";
+let home = "Location: Salzburg, Austria";
 const textElement = document.getElementsByTagName("p")[0];
 const br = document.createElement("br");
 let index = 0;
