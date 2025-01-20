@@ -1,4 +1,8 @@
 https://seerainer.netlify.app/* https://www.seerainer.com/:splat 301!
-/SecPwdMan* https://github.com/seerainer/SecPwdMan 301!
-/Dupes2Trash* https://github.com/seerainer/Dupes2Trash 301!
-/FileShredder* https://github.com/seerainer/FileShredder 301!
+
+/*  /index.de.html:splat  302  Language=de
+/*  /404.de.html:splat  404  Language=de
+
+/SecPwdMan* https://github.com/seerainer/SecPwdMan:splat 301!
+/Dupes2Trash* https://github.com/seerainer/Dupes2Trash:splat 301!
+/FileShredder* https://github.com/seerainer/FileShredder:splat 301!

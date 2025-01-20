@@ -11,6 +11,11 @@ const textElement = document.getElementsByTagName("p")[0];
 const br = document.createElement("br");
 let index = 0;
 
+if(navigator.language === "de") {
+    contact = "Kontakt: ";
+    home = "Ort: Salzburg, Österreich";
+}
+
 function showText() {
     if (textElement) {
         if (index < fsname.length) {
