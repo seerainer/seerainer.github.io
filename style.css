@@ -6,11 +6,30 @@
     font-family:inconsolata;
     src:url(Inconsolata.woff2);
 }
+@keyframes theme-transition {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 html {
     box-sizing:border-box;
 }
 body {
     margin:2em;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+body.light-theme {
+    background-color:#eee;
+    color:#111;
+    animation: theme-transition 0.5s;
+}
+body.dark-theme {
+    background-color:#111;
+    color:#eee;
+    animation: theme-transition 0.5s;
 }
 a {
     font-family:convergence;
@@ -19,6 +38,27 @@ a {
 }
 a:hover {
     text-decoration:underline;
+}
+a.light-theme {
+    color:#06c;
+}
+a.dark-theme {
+    color:#c60;
+}
+button {
+    font-size:24px;
+    padding:8px 8px;
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    filter:saturate(30%);
+    position:absolute;
+    right:8px;
+    top:8px;
+    transition:0.5s;
+}
+button:hover {
+    filter:saturate(100%);
 }
 details {
     display:none;
@@ -29,6 +69,12 @@ details>summary {
     border:none;
     cursor:pointer;
     box-shadow:1px 1px 2px #999;
+}
+details>summary.light-theme {
+    background-color:#ccc;
+}
+details>summary.dark-theme {
+    background-color:#555;
 }
 h1 {
     padding:70px 0;
@@ -47,24 +93,27 @@ img {
 img:hover {
     opacity:0.7;
 }
+img[alt="light"].light-theme {
+    display:none;
+}
+img[alt="dark"].dark-theme {
+    display:none;
+}
 p {
     font-family:convergence;
     line-height: 2;
-    animation:fading 1s;
-}
-@keyframes fading {
-    from {
-        opacity:0
-    }
-    to {
-        opacity:1
-    }
 }
 pre {
     font-family:inconsolata;
     padding:10px;
     margin:0;
     box-shadow:1px 1px 2px #999;
+}
+pre.light-theme {
+    background-color:#ccc;
+}
+pre.dark-theme {
+    background-color:#555;
 }
 @media screen and (max-width:600px) {
     p {
@@ -90,41 +139,5 @@ pre {
     pre {
         width:416px;
         font-size:13px;
-    }
-}
-@media (prefers-color-scheme:dark) {
-    body {
-        background-color:#111;
-        color:#fff;
-    }
-    details>summary {
-        background-color:#555;
-    }
-    pre {
-        background-color:#555;
-    }
-    a {
-        color:#c60;
-    }
-    img[alt="dark"] {
-        display:none;
-    }
-}
-@media (prefers-color-scheme:light) {
-    body {
-        background-color:#eee;
-        color:#000;
-    }
-    details>summary {
-        background-color:#ccc;
-    }
-    pre {
-        background-color:#ccc;
-    }
-    a {
-        color:#06c;
-    }
-    img[alt="light"] {
-        display:none;
     }
 }

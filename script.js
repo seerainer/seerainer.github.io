@@ -1,6 +1,8 @@
-const nojs = document.getElementsByTagName("noscript")[0];
-nojs.remove();
-const fsname = "Name: Philipp Seerainer";
+const nojs = document.getElementsByTagName('noscript')[0];
+if (nojs) {
+    nojs.remove();
+}
+const fsname = 'Name: Philipp Seerainer';
 const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEYrzIqxYJKwYBBAHaRw8BAQdA7IsFT4l1unJVRExP6eqTy2rJ4HxIL4Zwba8r
@@ -14,24 +16,44 @@ YrzIqwIbDAAKCRCuID1NlOIobe0kAP9BmLHOxHtfFyCJO0d+/jv9rT2gCtqycZct
 phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
 =Z83F
 -----END PGP PUBLIC KEY BLOCK-----`;
-let home = "Location: Salzburg, Austria";
-let contact = "Contact: ";
+let home = 'Location: Salzburg, Austria';
+let contact = 'Contact: ';
+let theme = 'Toggle theme';
 
-if (navigator.language === "de") {
-    home = "Ort: Salzburg, Österreich";
-    contact = "Kontakt: ";
+if (navigator.language === 'de') {
+    home = 'Ort: Salzburg, Österreich';
+    contact = 'Kontakt: ';
+    theme = 'Design wechseln';
 }
 
-const mail = window.atob("cGhpbGlwcEBzZWVyYWluZXIuY29t");
-const link = document.createElement("a");
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme:dark)').matches;
+const themeElement = 'theme-element';
+const mail = window.atob('cGhpbGlwcEBzZWVyYWluZXIuY29t');
+const link = document.createElement('a');
+link.className = themeElement;
+if (prefersDarkScheme) {
+    link.classList.add('dark-theme');
+} else {
+    link.classList.add('light-theme');
+}
 link.innerText = mail;
-link.href = window.atob("bWFpbHRvOg==") + mail;
-const textElement = document.getElementsByTagName("p")[0];
-const pgpText = document.getElementsByTagName("details")[0];
-const br = document.createElement("br");
-const summary = document.createElement("summary");
-summary.innerText = "PGP";
-const pre = document.createElement("pre");
+link.href = window.atob('bWFpbHRvOg==') + mail;
+const textElement = document.getElementsByTagName('p')[0];
+const pgpText = document.getElementsByTagName('details')[0];
+pgpText.className = themeElement;
+const button = document.getElementsByTagName('button')[0];
+button.title = theme;
+const image = 'img';
+const image1 = document.getElementsByTagName(image)[0];
+image1.className = themeElement;
+const image2 = document.getElementsByTagName(image)[1];
+image2.className = themeElement;
+const br = document.createElement('br');
+const summary = document.createElement('summary');
+summary.className = themeElement;
+summary.innerText = 'PGP';
+const pre = document.createElement('pre');
+pre.className = themeElement;
 pre.innerText = pgpKey;
 let index = 0;
 
@@ -59,8 +81,20 @@ function showText() {
     }
 }
 
+if (button) {
+    button.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        document.body.classList.toggle('light-theme');
+
+        document.querySelectorAll('.theme-element').forEach(element => {
+            element.classList.toggle('dark-theme');
+            element.classList.toggle('light-theme');
+        });
+    });
+}
+
 if (pgpText) {
-    pgpText.style.display = "block";
+    pgpText.style.display = 'block';
     pgpText.appendChild(summary);
     pgpText.appendChild(pre);
     pgpText.onclick = () => {
@@ -77,5 +111,19 @@ if (pgpText) {
         }
     };
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (prefersDarkScheme) {
+        document.body.classList.add('dark-theme');
+        document.querySelectorAll('.theme-element').forEach(element => {
+            element.classList.add('dark-theme');
+        });
+    } else {
+        document.body.classList.add('light-theme');
+        document.querySelectorAll('.theme-element').forEach(element => {
+            element.classList.add('light-theme');
+        });
+    }
+});
 
 showText();
