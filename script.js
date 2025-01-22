@@ -65,14 +65,18 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
         selection.addRange(range);
     });
 
+    const policy = window.trustedTypes ? trustedTypes.createPolicy('default', {
+        createHTML: (string) => string
+    }) : null;
+
     let index = 0;
     function showText() {
         if (index < fsname.length) {
-            textElement.innerHTML += fsname.charAt(index);
+            textElement.innerHTML += policy ? policy.createHTML(fsname.charAt(index)) : fsname.charAt(index);
         } else if (index < fsname.length + home.length) {
-            textElement.innerHTML += home.charAt(index - fsname.length);
+            textElement.innerHTML += policy ? policy.createHTML(home.charAt(index - fsname.length)) : home.charAt(index - fsname.length);
         } else if (index < fsname.length + home.length + contact.length) {
-            textElement.innerHTML += contact.charAt(index - fsname.length - home.length);
+            textElement.innerHTML += policy ? policy.createHTML(contact.charAt(index - fsname.length - home.length)) : contact.charAt(index - fsname.length - home.length);
         } else if (index === fsname.length + home.length + contact.length) {
             textElement.append(link);
         }
