@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nojs = document.querySelector('noscript');
     if (nojs) nojs.remove();
-    
+
     const fsname = 'Name: Philipp Seerainer';
     const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEYrzIqxYJKwYBBAHaRw8BAQdA7IsFT4l1unJVRExP6eqTy2rJ4HxIL4Zwba8r
@@ -15,7 +15,7 @@ YrzIqwIbDAAKCRCuID1NlOIobe0kAP9BmLHOxHtfFyCJO0d+/jv9rT2gCtqycZct
 phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
 =Z83F
 -----END PGP PUBLIC KEY BLOCK-----`;
-    const langDE = navigator.language === 'de';    
+    const langDE = navigator.language.startsWith('de');
     const home = langDE ? 'Ort: Salzburg, Österreich' : 'Location: Salzburg, Austria';
     const contact = langDE ? 'Kontakt: ' : 'Contact: ';
     const theme = langDE ? 'Design wechseln' : 'Toggle theme';
