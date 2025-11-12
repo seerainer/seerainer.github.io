@@ -15,14 +15,14 @@ YrzIqwIbDAAKCRCuID1NlOIobe0kAP9BmLHOxHtfFyCJO0d+/jv9rT2gCtqycZct
 phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
 =Z83F
 -----END PGP PUBLIC KEY BLOCK-----`;
-    
+
     const projects = [
         {
             name: 'ImageViewer',
             description: 'Image viewer with Rust-based image processing',
             language: 'Java',
             url: 'https://github.com/seerainer/ImageViewer',
-            emoji: '\uD83D\uDDBC️'
+            emoji: '\uD83D\uDDBC'
         },
         {
             name: 'SecPwdMan',
@@ -140,20 +140,20 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     const lightTheme = 'light-theme';
     const themeElement = 'theme-element';
     const mail = window.atob('cGhpbGlwcEBzZWVyYWluZXIuY29t');
-    
+
     // Tab functionality
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabPanels = document.querySelectorAll('.tab-panel');
     const tabs = document.querySelector('.tabs');
-    
+
     tabButtons.forEach(button => {
         button.classList.add(themeElement);
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
-            
+
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabPanels.forEach(panel => panel.classList.remove('active'));
-            
+
             button.classList.add('active');
             document.getElementById(targetTab).classList.add('active');
         });
@@ -164,7 +164,7 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     projects.forEach(project => {
         const card = document.createElement('div');
         card.className = `project-card ${themeElement}`;
-        
+
         const title = document.createElement('h3');
         let descriptionText = project.description || '';
         let emojiChar = project.emoji || '';
@@ -180,35 +180,35 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
         const emoji = document.createElement('span');
         emoji.className = 'project-emoji';
         emoji.textContent = emojiChar;
-            const link = document.createElement('a');
+        const link = document.createElement('a');
         link.className = themeElement;
         link.href = project.url;
         link.textContent = project.name;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
-            title.appendChild(emoji);
-            title.appendChild(link);
-        
+        title.appendChild(emoji);
+        title.appendChild(link);
+
         const desc = document.createElement('p');
         desc.textContent = descriptionText;
-        
+
         const meta = document.createElement('div');
         meta.className = 'project-meta';
-        
+
         const langDiv = document.createElement('div');
         langDiv.className = 'project-language';
-        
+
         const langDot = document.createElement('span');
         langDot.className = 'language-dot';
         langDot.style.backgroundColor = languageColors[project.language] || '#ccc';
-        
+
         const langText = document.createElement('span');
         langText.textContent = project.language;
-        
+
         langDiv.appendChild(langDot);
         langDiv.appendChild(langText);
         meta.appendChild(langDiv);
-        
+
         card.appendChild(title);
         card.appendChild(desc);
         card.appendChild(meta);
