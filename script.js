@@ -22,7 +22,7 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
             description: 'Image viewer with Rust-based image processing',
             language: 'Java',
             url: 'https://github.com/seerainer/ImageViewer',
-            emoji: '\uD83D\uDDBC'
+            emoji: '\uD83D\uDDBC\uFE0F'
         },
         {
             name: 'SecPwdMan',
@@ -288,4 +288,5 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     });
 
     showText();
+
 });
