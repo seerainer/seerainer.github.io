@@ -5,19 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+    <noscript>
+        <link rel="stylesheet" href="noscript.css">
+    </noscript>
     <title>Philipp Seerainer</title>
 </head>
 <body>
-<p>
 <noscript>Javascript disabled!</noscript>
-</p>
-<details>
-</details>
-<button></button>
+
+<div class="container">
+    <h1>👋🏼 Hi, I'm Philipp Seerainer</h1>
+    
+    <nav class="tabs">
+        <button class="tab-button active" data-tab="projects">Projects</button>
+        <button class="tab-button" data-tab="contact">Contact</button>
+    </nav>
+    
+    <div class="tab-content">
+        <div id="projects" class="tab-panel active">
+            <div class="projects-grid"></div>
+        </div>
+        
+        <div id="contact" class="tab-panel">
+            <p class="contact-info"></p>
+            <details class="pgp-details"></details>
+        </div>
+    </div>
+</div>
+
+<button class="theme-toggle"></button>
+
 <a href="https://github.com/seerainer">
     <img src="github-mark.svg" alt="dark">
     <img src="github-mark-white.svg" alt="light">
 </a>
-<script src="script.js" integrity="sha384-7Gt+rUCu5s9S/tQYodwX+E1cVFcf00x4UtyDIbyDuthbJ7JPdOt6WqT8YYSien5E" crossorigin="anonymous"></script>
+
+<script src="script.js" integrity="sha384-aVw7Cvhsj6pfeZKb0/eLbpV4rQnxLsLKEOhH76r5mtwAYXOOO4PzlBYUW1BUOHRz" crossorigin="anonymous"></script>
 </body>
 </html>
