@@ -15,6 +15,107 @@ YrzIqwIbDAAKCRCuID1NlOIobe0kAP9BmLHOxHtfFyCJO0d+/jv9rT2gCtqycZct
 phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
 =Z83F
 -----END PGP PUBLIC KEY BLOCK-----`;
+    
+    const projects = [
+        {
+            name: '🖼️ ImageViewer',
+            description: 'Image viewer with Rust-based image processing',
+            language: 'Java',
+            url: 'https://github.com/seerainer/ImageViewer'
+        },
+        {
+            name: '🔐 SecPwdMan',
+            description: 'Cross-platform Password Manager',
+            language: 'Java',
+            url: 'https://github.com/seerainer/SecPwdMan'
+        },
+        {
+            name: '📊 CSVedit',
+            description: 'CSV editor',
+            language: 'Java',
+            url: 'https://github.com/seerainer/CSVedit'
+        },
+        {
+            name: '♟️ ChessGame',
+            description: 'Chess with AI Engine',
+            language: 'Java',
+            url: 'https://github.com/seerainer/ChessGame'
+        },
+        {
+            name: '🪄 HexEdit',
+            description: 'Hex Editor',
+            language: 'Java',
+            url: 'https://github.com/seerainer/HexEdit'
+        },
+        {
+            name: '🎮 TetrisGame',
+            description: 'Tetris',
+            language: 'Java',
+            url: 'https://github.com/seerainer/TetrisGame'
+        },
+        {
+            name: '📝 SWTextedit',
+            description: 'A simple text editor',
+            language: 'Java',
+            url: 'https://github.com/seerainer/SWTextedit'
+        },
+        {
+            name: '🚮 Dupes2Trash',
+            description: 'Moves duplicate files to the trash',
+            language: 'Java',
+            url: 'https://github.com/seerainer/Dupes2Trash'
+        },
+        {
+            name: '🔥 FileShredder',
+            description: 'Secure file deletion',
+            language: 'Java',
+            url: 'https://github.com/seerainer/FileShredder'
+        },
+        {
+            name: '🐍 SnakeGame',
+            description: 'Snake',
+            language: 'Java',
+            url: 'https://github.com/seerainer/SnakeGame'
+        },
+        {
+            name: '👾 AsteroidDodger',
+            description: 'AsteroidDodger game',
+            language: 'Java',
+            url: 'https://github.com/seerainer/AsteroidDodger'
+        },
+        {
+            name: '📊 CSVparser',
+            description: 'CSV parser',
+            language: 'Java',
+            url: 'https://github.com/seerainer/CSVparser'
+        },
+        {
+            name: '🐍 2_Player_Snake',
+            description: 'Snake for 2 players',
+            language: 'JavaScript',
+            url: 'https://github.com/seerainer/2_Player_Snake'
+        },
+        {
+            name: '☕ RsJarLauncher',
+            description: 'Cross-platform Java jar-file launcher',
+            language: 'Rust',
+            url: 'https://github.com/seerainer/RsJarLauncher'
+        },
+        {
+            name: '☕ MinJarLaunch',
+            description: 'Java jar-file launcher',
+            language: 'C',
+            url: 'https://github.com/seerainer/MinJarLaunch'
+        }
+    ];
+
+    const languageColors = {
+        'Java': '#b07219',
+        'JavaScript': '#f1e05a',
+        'Rust': '#dea584',
+        'C': '#555555'
+    };
+
     const langDE = navigator.language.startsWith('de');
     const home = langDE ? 'Ort: Salzburg, Österreich' : 'Location: Salzburg, Austria';
     const contact = langDE ? 'Kontakt: ' : 'Contact: ';
@@ -24,15 +125,75 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     const lightTheme = 'light-theme';
     const themeElement = 'theme-element';
     const mail = window.atob('cGhpbGlwcEBzZWVyYWluZXIuY29t');
+    
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    const tabs = document.querySelector('.tabs');
+    
+    tabButtons.forEach(button => {
+        button.classList.add(themeElement);
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+            
+            button.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+
+    // Populate projects
+    const projectsGrid = document.querySelector('.projects-grid');
+    projects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = `project-card ${themeElement}`;
+        
+        const title = document.createElement('h3');
+        const link = document.createElement('a');
+        link.className = themeElement;
+        link.href = project.url;
+        link.textContent = project.name;
+        link.target = '_blank';
+        title.appendChild(link);
+        
+        const desc = document.createElement('p');
+        desc.textContent = project.description;
+        
+        const meta = document.createElement('div');
+        meta.className = 'project-meta';
+        
+        const langDiv = document.createElement('div');
+        langDiv.className = 'project-language';
+        
+        const langDot = document.createElement('span');
+        langDot.className = 'language-dot';
+        langDot.style.backgroundColor = languageColors[project.language] || '#ccc';
+        
+        const langText = document.createElement('span');
+        langText.textContent = project.language;
+        
+        langDiv.appendChild(langDot);
+        langDiv.appendChild(langText);
+        meta.appendChild(langDiv);
+        
+        card.appendChild(title);
+        card.appendChild(desc);
+        card.appendChild(meta);
+        projectsGrid.appendChild(card);
+    });
+
+    // Contact info setup
     const link = document.createElement('a');
     link.className = themeElement;
     link.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     link.innerText = mail;
     link.href = window.atob('bWFpbHRvOg==') + mail;
 
-    const textElement = document.querySelector('p');
-    const pgpText = document.querySelector('details');
-    const button = document.querySelector('button');
+    const textElement = document.querySelector('.contact-info');
+    const pgpText = document.querySelector('.pgp-details');
+    const themeButton = document.querySelector('.theme-toggle');
     const images = document.querySelectorAll('img');
     const summary = document.createElement('summary');
     summary.className = themeElement;
@@ -41,21 +202,23 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     pre.className = themeElement;
     pre.innerText = pgpKey;
 
-    [pgpText, ...images].forEach(el => el.className = themeElement);
+    [pgpText, tabs, ...images].forEach(el => el.className += ` ${themeElement}`);
     pgpText.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
-    button.innerText = '\uD83D\uDD06';
-    button.title = theme;
+    tabs.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
+    themeButton.innerText = prefersDarkScheme ? '\uD83D\uDD06' : '\uD83D\uDD05';
+    themeButton.title = theme;
 
-    button.addEventListener('click', () => {
+    themeButton.addEventListener('click', () => {
         document.body.classList.toggle(darkTheme);
         document.body.classList.toggle(lightTheme);
         document.querySelectorAll('.theme-element').forEach(el => {
             el.classList.toggle(darkTheme);
             el.classList.toggle(lightTheme);
         });
+        // Update button emoji based on new theme
+        themeButton.innerText = document.body.classList.contains(darkTheme) ? '\uD83D\uDD06' : '\uD83D\uDD05';
     });
 
-    pgpText.style.display = 'block';
     pgpText.append(summary, pre);
     pgpText.addEventListener('click', () => {
         const range = document.createRange();
