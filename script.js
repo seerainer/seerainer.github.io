@@ -156,6 +156,7 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
         link.href = project.url;
         link.textContent = project.name;
         link.target = '_blank';
+        link.rel = 'noopener noreferrer';
         title.appendChild(link);
         
         const desc = document.createElement('p');
@@ -202,7 +203,7 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     pre.className = themeElement;
     pre.innerText = pgpKey;
 
-    [pgpText, tabs, ...images].forEach(el => el.className += ` ${themeElement}`);
+    [pgpText, tabs, ...images].forEach(el => el.classList.add(themeElement));
     pgpText.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     tabs.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     themeButton.innerText = prefersDarkScheme ? '\uD83D\uDD06' : '\uD83D\uDD05';

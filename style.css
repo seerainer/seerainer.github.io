@@ -217,11 +217,11 @@ button.theme-toggle {
 button.theme-toggle:hover {
     filter:saturate(100%);
 }
-details.pgp-details.pgp-details {
+details.pgp-details {
     display:block;
     margin-top:2em;
 }
-details.pgp-details.pgp-details>summary {
+details.pgp-details>summary {
     font-family:inconsolata;
     padding:10px;
     border:none;
@@ -233,12 +233,6 @@ details.pgp-details>summary.light-theme {
 }
 details.pgp-details>summary.dark-theme {
     background-color:#555;
-}
-h1 {
-    font-family:convergence;
-    text-align:center;
-    margin:0 0 2em 0;
-    font-size:2.5em;
 }
 img {
     border-style:none;
