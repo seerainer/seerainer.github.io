@@ -1,5 +1,5 @@
 .container,
 .theme-toggle,
 a[href*="github"] {
-    display:none !important;
+    display: none !important;
 }
