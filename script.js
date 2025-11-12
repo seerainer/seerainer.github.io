@@ -246,7 +246,6 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
             el.classList.toggle(darkTheme);
             el.classList.toggle(lightTheme);
         });
-        // Update button emoji based on new theme
         themeButton.innerText = document.body.classList.contains(darkTheme) ? '\uD83D\uDD06' : '\uD83D\uDD05';
     });
 
@@ -281,12 +280,10 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
         setTimeout(showText, 34);
     }
 
-    document.querySelector('html').lang = langDE ? 'de' : 'en';
     document.body.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     document.querySelectorAll('.theme-element').forEach(el => {
         el.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     });
 
     showText();
-
 });
