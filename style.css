@@ -177,6 +177,11 @@ h1 {
 .project-card h3 a:hover {
     text-decoration:underline;
 }
+.project-card h3 .project-emoji {
+    margin-right:0.5em;
+    user-select:none;
+    filter:saturate(70%);
+}
 .project-card p {
     font-family:convergence;
     line-height:1.6;

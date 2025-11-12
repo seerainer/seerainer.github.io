@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nojs = document.querySelector('noscript');
     if (nojs) nojs.remove();
 
-    const fsname = 'Name: Philipp Seerainer';
+    const fsname = '\uD83E\uDEAA Name: Philipp Seerainer';
     const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEYrzIqxYJKwYBBAHaRw8BAQdA7IsFT4l1unJVRExP6eqTy2rJ4HxIL4Zwba8r
 eb2hTfG0KVBoaWxpcHAgU2VlcmFpbmVyIDxwaGlsaXBwQHNlZXJhaW5lci5jb20+
@@ -18,94 +18,109 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     
     const projects = [
         {
-            name: '🖼️ ImageViewer',
+            name: 'ImageViewer',
             description: 'Image viewer with Rust-based image processing',
             language: 'Java',
-            url: 'https://github.com/seerainer/ImageViewer'
+            url: 'https://github.com/seerainer/ImageViewer',
+            emoji: '\uD83D\uDDBC️'
         },
         {
-            name: '🔐 SecPwdMan',
+            name: 'SecPwdMan',
             description: 'Cross-platform Password Manager',
             language: 'Java',
-            url: 'https://github.com/seerainer/SecPwdMan'
+            url: 'https://github.com/seerainer/SecPwdMan',
+            emoji: '\uD83D\uDD10'
         },
         {
-            name: '📊 CSVedit',
+            name: 'CSVedit',
             description: 'CSV editor',
             language: 'Java',
-            url: 'https://github.com/seerainer/CSVedit'
+            url: 'https://github.com/seerainer/CSVedit',
+            emoji: '\uD83D\uDCCA'
         },
         {
-            name: '♟️ ChessGame',
+            name: 'ChessGame',
             description: 'Chess with AI Engine',
             language: 'Java',
-            url: 'https://github.com/seerainer/ChessGame'
+            url: 'https://github.com/seerainer/ChessGame',
+            emoji: '\u265F\uFE0F'
         },
         {
-            name: '🪄 HexEdit',
+            name: 'HexEdit',
             description: 'Hex Editor',
             language: 'Java',
-            url: 'https://github.com/seerainer/HexEdit'
+            url: 'https://github.com/seerainer/HexEdit',
+            emoji: '\uD83E\uDE84'
         },
         {
-            name: '🎮 TetrisGame',
+            name: 'TetrisGame',
             description: 'Tetris',
             language: 'Java',
-            url: 'https://github.com/seerainer/TetrisGame'
+            url: 'https://github.com/seerainer/TetrisGame',
+            emoji: '\uD83C\uDFAE'
         },
         {
-            name: '📝 SWTextedit',
+            name: 'SWTextedit',
             description: 'A simple text editor',
             language: 'Java',
-            url: 'https://github.com/seerainer/SWTextedit'
+            url: 'https://github.com/seerainer/SWTextedit',
+            emoji: '\uD83D\uDCDD'
         },
         {
-            name: '🚮 Dupes2Trash',
+            name: 'Dupes2Trash',
             description: 'Moves duplicate files to the trash',
             language: 'Java',
-            url: 'https://github.com/seerainer/Dupes2Trash'
+            url: 'https://github.com/seerainer/Dupes2Trash',
+            emoji: '\uD83D\uDEAE'
         },
         {
-            name: '🔥 FileShredder',
+            name: 'FileShredder',
             description: 'Secure file deletion',
             language: 'Java',
-            url: 'https://github.com/seerainer/FileShredder'
+            url: 'https://github.com/seerainer/FileShredder',
+            emoji: '\uD83D\uDD25'
         },
         {
-            name: '🐍 SnakeGame',
+            name: 'SnakeGame',
             description: 'Snake',
             language: 'Java',
-            url: 'https://github.com/seerainer/SnakeGame'
+            url: 'https://github.com/seerainer/SnakeGame',
+            emoji: '\uD83D\uDC0D'
         },
         {
-            name: '👾 AsteroidDodger',
+            name: 'AsteroidDodger',
             description: 'AsteroidDodger game',
             language: 'Java',
-            url: 'https://github.com/seerainer/AsteroidDodger'
+            url: 'https://github.com/seerainer/AsteroidDodger',
+            emoji: '\uD83D\uDEF8'
         },
         {
-            name: '📊 CSVparser',
+            name: 'CSVparser',
             description: 'CSV parser',
             language: 'Java',
-            url: 'https://github.com/seerainer/CSVparser'
+            url: 'https://github.com/seerainer/CSVparser',
+            emoji: '\uD83D\uDCCA'
         },
         {
-            name: '🐍 2_Player_Snake',
+            name: '2_Player_Snake',
             description: 'Snake for 2 players',
             language: 'JavaScript',
-            url: 'https://github.com/seerainer/2_Player_Snake'
+            url: 'https://github.com/seerainer/2_Player_Snake',
+            emoji: '\uD83D\uDC0D'
         },
         {
-            name: '☕ RsJarLauncher',
+            name: 'RsJarLauncher',
             description: 'Cross-platform Java jar-file launcher',
             language: 'Rust',
-            url: 'https://github.com/seerainer/RsJarLauncher'
+            url: 'https://github.com/seerainer/RsJarLauncher',
+            emoji: '\u2615'
         },
         {
-            name: '☕ MinJarLaunch',
+            name: 'MinJarLaunch',
             description: 'Java jar-file launcher',
             language: 'C',
-            url: 'https://github.com/seerainer/MinJarLaunch'
+            url: 'https://github.com/seerainer/MinJarLaunch',
+            emoji: '\u2615'
         }
     ];
 
@@ -117,8 +132,8 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     };
 
     const langDE = navigator.language.startsWith('de');
-    const home = langDE ? 'Ort: Salzburg, Österreich' : 'Location: Salzburg, Austria';
-    const contact = langDE ? 'Kontakt: ' : 'Contact: ';
+    const home = langDE ? '\uD83D\uDDFA\uFE0F Ort: Salzburg, Österreich' : '\uD83D\uDDFA\uFE0F Location: Salzburg, Austria';
+    const contact = langDE ? '\uD83D\uDCE7 Kontakt: ' : '\uD83D\uDCE7 Contact: ';
     const theme = langDE ? 'Design wechseln' : 'Toggle theme';
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const darkTheme = 'dark-theme';
@@ -151,16 +166,31 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
         card.className = `project-card ${themeElement}`;
         
         const title = document.createElement('h3');
-        const link = document.createElement('a');
+        let descriptionText = project.description || '';
+        let emojiChar = project.emoji || '';
+        if (!emojiChar) {
+            const match = descriptionText.match(/^\p{Extended_Pictographic}\uFE0F?/u);
+            if (match) {
+                emojiChar = match[0];
+                descriptionText = descriptionText.replace(/^\p{Extended_Pictographic}\uFE0F?\s*/u, '');
+            }
+        }
+        if (!emojiChar) emojiChar = '\uD83D\uDC7E';
+
+        const emoji = document.createElement('span');
+        emoji.className = 'project-emoji';
+        emoji.textContent = emojiChar;
+            const link = document.createElement('a');
         link.className = themeElement;
         link.href = project.url;
         link.textContent = project.name;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
-        title.appendChild(link);
+            title.appendChild(emoji);
+            title.appendChild(link);
         
         const desc = document.createElement('p');
-        desc.textContent = project.description;
+        desc.textContent = descriptionText;
         
         const meta = document.createElement('div');
         meta.className = 'project-meta';
@@ -198,7 +228,7 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     const images = document.querySelectorAll('img');
     const summary = document.createElement('summary');
     summary.className = themeElement;
-    summary.innerText = 'PGP';
+    summary.innerText = '\uD83D\uDD10 PGP';
     const pre = document.createElement('pre');
     pre.className = themeElement;
     pre.innerText = pgpKey;
