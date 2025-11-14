@@ -13,7 +13,7 @@ noscript {
     font-family: convergence, sans-serif;
     text-align: center;
     margin-top: 2em;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 @keyframes theme-transition {
@@ -299,9 +299,11 @@ img {
     max-width: 100%;
     height: auto;
     opacity: 0.3;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
+    position: static;
+    bottom: auto;
+    right: auto;
+    margin: 0 auto;
+    display: inline-block;
     transition: 0.5s;
     z-index: 1000;
     width: 32px;
@@ -346,6 +348,12 @@ pre.dark-theme {
     background-color: #555;
 }
 
+#github-mark {
+    display: block;
+    text-align: center;
+    margin: 24px 0 8px;
+}
+
 @media screen and (max-width:600px) {
     h1 {
         font-size: 2em;
@@ -386,5 +394,15 @@ pre.dark-theme {
     pre {
         width: 416px;
         font-size: 13px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    img {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        margin: 0;
+        z-index: 1000;
     }
 }
