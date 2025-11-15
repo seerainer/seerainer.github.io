@@ -57,7 +57,7 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
             description: 'Tetris',
             language: 'Java',
             url: 'https://github.com/seerainer/TetrisGame',
-            emoji: '\uD83C\uDFAE'
+            emoji: '\uD83E\uDDE9'
         },
         {
             name: 'SWTextedit',
