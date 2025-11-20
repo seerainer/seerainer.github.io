@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nojs) nojs.remove();
 
     const fsname = '\uD83E\uDEAA Name: Philipp Seerainer';
-    const fingerprint = '\uD83D\uDD11 PGP Fingerprint: 84FA F855 8FA4 4808 B14E 9CB0 AE20 3D4D 94E2 286D';
+    const fingerprint = '\uD83D\uDD11 PGP fingerprint: 84FA F855 8FA4 4808 B14E 9CB0 AE20 3D4D 94E2 286D';
 
     const projects = [
         {
@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pgp.innerText = 'public-key.asc';
     pgp.href = 'https://github.com/seerainer/seerainer/raw/refs/heads/main/public-key.asc';
     pgp.target = '_blank';
+    pgp.rel = 'noopener noreferrer';
 
     const textElement = document.querySelector('.contact-info');
     const themeButton = document.querySelector('.theme-toggle');
