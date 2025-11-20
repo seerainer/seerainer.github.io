@@ -272,27 +272,6 @@ button.theme-toggle:hover {
     filter: saturate(100%);
 }
 
-details.pgp-details {
-    display: block;
-    margin-top: 2em;
-}
-
-details.pgp-details>summary {
-    font-family: inconsolata;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 1px 1px 2px #999;
-}
-
-details.pgp-details>summary.light-theme {
-    background-color: #ccc;
-}
-
-details.pgp-details>summary.dark-theme {
-    background-color: #555;
-}
-
 img {
     border-style: none;
     background-color: transparent;
@@ -333,21 +312,6 @@ p {
     line-height: 2;
 }
 
-pre {
-    font-family: inconsolata;
-    padding: 10px;
-    margin: 0;
-    box-shadow: 1px 1px 2px #999;
-}
-
-pre.light-theme {
-    background-color: #ccc;
-}
-
-pre.dark-theme {
-    background-color: #555;
-}
-
 #github-mark {
     display: block;
     text-align: center;
@@ -359,41 +323,13 @@ pre.dark-theme {
         font-size: 2em;
     }
 
+    .contact-info {
+        font-size: 1em;
+    }
+
     .tab-button {
         font-size: 1em;
         padding: 0.6em 1em;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    details.pgp-details>summary {
-        width: 100%;
-        max-width: 320px;
-        font-size: 13px;
-    }
-
-    pre {
-        width: 100%;
-        max-width: 320px;
-        font-size: 10px;
-    }
-}
-
-@media screen and (min-width:600px) {
-    p {
-        font-size: 22px;
-    }
-
-    details.pgp-details>summary {
-        width: 416px;
-        font-size: 16px;
-    }
-
-    pre {
-        width: 416px;
-        font-size: 13px;
     }
 }
 

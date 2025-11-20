@@ -3,18 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nojs) nojs.remove();
 
     const fsname = '\uD83E\uDEAA Name: Philipp Seerainer';
-    const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
-mDMEYrzIqxYJKwYBBAHaRw8BAQdA7IsFT4l1unJVRExP6eqTy2rJ4HxIL4Zwba8r
-eb2hTfG0KVBoaWxpcHAgU2VlcmFpbmVyIDxwaGlsaXBwQHNlZXJhaW5lci5jb20+
-iJMEExYKADsWIQSE+vhVj6RICLFOnLCuID1NlOIobQUCYrzIqwIbIwULCQgHAgIi
-AgYVCgkICwIEFgIDAQIeBwIXgAAKCRCuID1NlOIobSzeAP9UebF7rBPa+k/1TjZa
-/7mshIQTRfBzRqT8nvvYBHq84QD/RnH5cJDvsXKM0KV0jWOcqmELm1ImBGq8Nbl2
-MFn5DQ64OARivMirEgorBgEEAZdVAQUBAQdAX7XQ10VBNLh7MW4m9TrLSTm/wqui
-YkJAboaiI/m4nRQDAQgHiHgEGBYKACAWIQSE+vhVj6RICLFOnLCuID1NlOIobQUC
-YrzIqwIbDAAKCRCuID1NlOIobe0kAP9BmLHOxHtfFyCJO0d+/jv9rT2gCtqycZct
-phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
-=Z83F
------END PGP PUBLIC KEY BLOCK-----`;
+    const fingerprint = '\uD83D\uDD11 PGP Fingerprint: 84FA F855 8FA4 4808 B14E 9CB0 AE20 3D4D 94E2 286D';
 
     const projects = [
         {
@@ -222,19 +211,18 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
     link.innerText = mail;
     link.href = window.atob('bWFpbHRvOg==') + mail;
 
+    const pgp = document.createElement('a');
+    pgp.className = themeElement;
+    pgp.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
+    pgp.innerText = 'public-key.asc';
+    pgp.href = 'https://github.com/seerainer/seerainer/raw/refs/heads/main/public-key.asc';
+    pgp.target = '_blank';
+
     const textElement = document.querySelector('.contact-info');
-    const pgpText = document.querySelector('.pgp-details');
     const themeButton = document.querySelector('.theme-toggle');
     const images = document.querySelectorAll('img');
-    const summary = document.createElement('summary');
-    summary.className = themeElement;
-    summary.innerText = '\uD83D\uDD10 PGP';
-    const pre = document.createElement('pre');
-    pre.className = themeElement;
-    pre.innerText = pgpKey;
 
-    [pgpText, tabs, ...images].forEach(el => el.classList.add(themeElement));
-    pgpText.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
+    [tabs, ...images].forEach(el => el.classList.add(themeElement));
     tabs.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     themeButton.innerText = prefersDarkScheme ? '\uD83D\uDD06' : '\uD83D\uDD05';
     themeButton.title = theme;
@@ -247,15 +235,6 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
             el.classList.toggle(lightTheme);
         });
         themeButton.innerText = document.body.classList.contains(darkTheme) ? '\uD83D\uDD06' : '\uD83D\uDD05';
-    });
-
-    pgpText.append(summary, pre);
-    pgpText.addEventListener('click', () => {
-        const range = document.createRange();
-        range.selectNodeContents(pre);
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
     });
 
     const policy = window.trustedTypes ? trustedTypes.createPolicy('default', {
@@ -271,7 +250,7 @@ phva83NCYwEA1XIo3tBp2RL5JKm31GWpSC8HvS2TY42LhqmDm+GJUQc=
         } else if (index < fsname.length + home.length + contact.length) {
             textElement.innerHTML += policy ? policy.createHTML(contact.charAt(index - fsname.length - home.length)) : contact.charAt(index - fsname.length - home.length);
         } else if (index === fsname.length + home.length + contact.length) {
-            textElement.append(link);
+            textElement.append(link, document.createElement('br'), fingerprint, document.createElement('br'), pgp);
         }
         if (index === fsname.length - 1 || index === fsname.length + home.length - 1) {
             textElement.appendChild(document.createElement('br'));
