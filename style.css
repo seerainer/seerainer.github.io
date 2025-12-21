@@ -310,8 +310,8 @@ p {
 
 #github-mark {
     display: block;
-    text-align: center;
-    margin: 24px 0 8px;
+    width: fit-content;
+    margin: 24px auto 8px;
 }
 
 @media screen and (max-width:600px) {

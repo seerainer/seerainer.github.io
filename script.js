@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             textElement.appendChild(document.createElement('br'));
         }
         index++;
-        setTimeout(showText, 34);
+        setTimeout(showText, 10);
     }
 
     document.body.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
