@@ -203,7 +203,7 @@ h1 {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 255, 0, 0.2);
 }
 
 .project-card h3 {
@@ -340,3 +340,4 @@ p {
         padding: 0.6em 1em;
     }
 }
+
