@@ -3,22 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nojs) nojs.remove();
 
     const fsname = '\uD83E\uDEAA Name: Philipp Seerainer';
-    const fingerprint = '\uD83D\uDD11 PGP fingerprint: 84FA F855 8FA4 4808 B14E 9CB0 AE20 3D4D 94E2 286D';
+    const fingertext = '\uD83D\uDD11 PGP fingerprint: ';
+    const fingerprint = '84FA F855 8FA4 4808 B14E 9CB0 AE20 3D4D 94E2 286D';
 
     const projects = [
         {
-            name: 'ImageViewer',
-            description: 'Image viewer with Rust-based image processing',
+            name: 'ChessGame',
+            description: 'Chess with AI engine',
             language: 'Java',
-            url: 'https://github.com/seerainer/ImageViewer',
-            emoji: '\uD83D\uDDBC\uFE0F'
-        },
-        {
-            name: 'SecPwdMan',
-            description: 'Cross-platform Password Manager',
-            language: 'Java',
-            url: 'https://github.com/seerainer/SecPwdMan',
-            emoji: '\uD83D\uDD10'
+            url: 'https://github.com/seerainer/ChessGame',
+            emoji: '\u265F\uFE0F'
         },
         {
             name: 'CSVedit',
@@ -28,15 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
             emoji: '\uD83D\uDCCA'
         },
         {
-            name: 'ChessGame',
-            description: 'Chess with AI Engine',
+            name: 'ImageViewer',
+            description: 'Image viewer with Rust-based image processing',
             language: 'Java',
-            url: 'https://github.com/seerainer/ChessGame',
-            emoji: '\u265F\uFE0F'
+            url: 'https://github.com/seerainer/ImageViewer',
+            emoji: '\uD83D\uDDBC\uFE0F'
+        },
+        {
+            name: 'SecPwdMan',
+            description: 'Cross-platform password manager',
+            language: 'Java',
+            url: 'https://github.com/seerainer/SecPwdMan',
+            emoji: '\uD83D\uDD10'
         },
         {
             name: 'HexEdit',
-            description: 'Hex Editor',
+            description: 'Hex editor',
             language: 'Java',
             url: 'https://github.com/seerainer/HexEdit',
             emoji: '\uD83E\uDE84'
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: 'AsteroidDodger',
-            description: 'AsteroidDodger game',
+            description: 'Asteroid dodger game',
             language: 'Java',
             url: 'https://github.com/seerainer/AsteroidDodger',
             emoji: '\uD83D\uDEF8'
@@ -128,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkTheme = 'dark-theme';
     const lightTheme = 'light-theme';
     const themeElement = 'theme-element';
-    const mail = window.atob('cGhpbGlwcEBzZWVyYWluZXIuY29t');
+    const mail = 'philipp@seerainer.com';
 
     // Tab functionality
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -209,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.className = themeElement;
     link.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     link.innerText = mail;
-    link.href = window.atob('bWFpbHRvOg==') + mail;
+    link.href = 'mailto:' + mail;
 
     const pgp = document.createElement('a');
     pgp.className = themeElement;
@@ -251,7 +252,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (index < fsname.length + home.length + contact.length) {
             textElement.innerHTML += policy ? policy.createHTML(contact.charAt(index - fsname.length - home.length)) : contact.charAt(index - fsname.length - home.length);
         } else if (index === fsname.length + home.length + contact.length) {
-            textElement.append(link, document.createElement('br'), fingerprint, document.createElement('br'), pgp);
+            const finger = document.createElement('pre');
+            const newContent = document.createTextNode(fingerprint);
+            finger.appendChild(newContent);
+            finger.className = themeElement;
+            finger.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
+            textElement.append(link, document.createElement('br'), fingertext, document.createElement('br'), finger, document.createElement('br'), pgp);
         }
         if (index === fsname.length - 1 || index === fsname.length + home.length - 1) {
             textElement.appendChild(document.createElement('br'));
