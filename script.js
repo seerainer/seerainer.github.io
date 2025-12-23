@@ -257,7 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
             finger.appendChild(newContent);
             finger.className = themeElement;
             finger.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
-            textElement.append(link, document.createElement('br'), fingertext, document.createElement('br'), finger, document.createElement('br'), pgp);
+            textElement.append(link, document.createElement('br'), fingertext, finger, pgp);
+            themeButton.disabled = false;
         }
         if (index === fsname.length - 1 || index === fsname.length + home.length - 1) {
             textElement.appendChild(document.createElement('br'));
