@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pgp.className = themeElement;
     pgp.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
     pgp.innerText = 'public-key.asc';
-    pgp.href = 'https://github.com/seerainer/seerainer/raw/refs/heads/main/public-key.asc';
+    pgp.href = '/public-key.asc';
     pgp.target = '_blank';
     pgp.rel = 'noopener noreferrer';
 
