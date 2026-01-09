@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'none'; base-uri 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self'; script-src 'self'; style-src 'self'; require-trusted-types-for 'script'
+  Content-Security-Policy: default-src 'none'; base-uri 'self'; child-src 'self' blob:; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' https:; media-src 'self' blob: https:; connect-src 'self' https:; script-src 'self' https://cdn.jsdelivr.net; style-src 'self'; require-trusted-types-for 'script'; trusted-types default 'allow-duplicates'
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Expect-CT: max-age=86400, enforce
