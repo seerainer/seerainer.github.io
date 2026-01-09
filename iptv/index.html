@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; base-uri 'self'; child-src 'self' blob:; font-src 'self'; form-action 'self'; frame-ancestors 'self'; img-src 'self' https:; media-src 'self' blob: https:; connect-src 'self' https:; script-src 'self' https://cdn.jsdelivr.net; style-src 'self'; require-trusted-types-for 'script'; trusted-types default 'allow-duplicates'">
+    <title>IPTV Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"
+        integrity="sha384-iZBI1/lW9u8FcBjxuQ8nPTsU7TXhZNtzkV8H3gQHSTgz+VYQoKWqGlBHqhO84alJ"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <input type="text" id="playlist-url" placeholder="Enter M3U URL"
+                value="https://iptv-org.github.io/iptv/languages/eng.m3u">
+            <button id="load-btn">Load Playlist</button>
+            <button id="toggle-list-btn" class="mobile-only" type="button">Channels</button>
+        </div>
+
+        <div class="content-wrapper">
+            <div id="channel-list" class="channel-list">
+                <!-- Channels will be added here -->
+            </div>
+            <div id="drawer-backdrop" class="drawer-backdrop"></div>
+            <div class="right-section">
+                <div class="player-wrapper">
+                    <video id="video" controls aria-label="IPTV channel video player"></video>
+                </div>
+                <div class="predefined-playlists">
+                    <h3>Playlists</h3>
+                    <div id="playlists-container">
+                        <!-- Predefined playlists will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" integrity="sha384-crxr8/QuLl2qK4T9js2Q4trcty6Vx7+euYIPAKF5BNelEOcKfmFvF0v9xnaAIOzu"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

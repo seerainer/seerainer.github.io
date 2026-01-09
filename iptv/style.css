@@ -1,0 +1,398 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 15px 0;
+    padding: 0 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 15px 20px;
+    flex-shrink: 0;
+}
+
+.mobile-only {
+    display: none;
+    padding: 10px 14px;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.drawer-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 899;
+}
+
+#playlist-url {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#load-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#load-btn:hover {
+    background-color: #0056b3;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    padding: 0 20px 20px 20px;
+    min-height: 0;
+}
+
+.channel-list {
+    flex: 0 0 250px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.message {
+    padding: 10px;
+}
+
+.message-error {
+    color: red;
+}
+
+.message-loading,
+.message-empty {
+    color: #333;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.player-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.predefined-playlists {
+    flex: 0 0 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background: #fafafa;
+    overflow-y: auto;
+}
+
+.predefined-playlists h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.playlist-item {
+    padding: 8px;
+    margin-bottom: 5px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+
+.playlist-item:hover {
+    background: #e3f2fd;
+    border-color: #007bff;
+}
+
+.playlist-item small {
+    display: block;
+    color: #666;
+    font-size: 0.85em;
+}
+
+.channel-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.channel-item:hover {
+    background-color: #f8f9fa;
+}
+
+.channel-item.active {
+    background-color: #e2e6ea;
+    font-weight: bold;
+}
+
+.channel-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.channel-logo-fallback {
+    background: #eee;
+    color: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    border-radius: 4px;
+}
+
+.channel-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-name {
+    font-weight: bold;
+}
+
+.channel-group {
+    font-size: 0.8em;
+    color: #666;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #000;
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+    .controls {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    #playlist-url {
+        min-width: 100%;
+    }
+
+    #load-btn {
+        flex: 1 1 auto;
+    }
+
+    .mobile-only {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 12px 12px 12px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .right-section {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .player-wrapper {
+        order: -1;
+        min-height: 40vh;
+    }
+
+    .predefined-playlists {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .channel-list {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 70px;
+        max-width: none;
+        width: 100%;
+        border: none;
+        border-radius: 14px 14px 0 0;
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        transform: translateY(100%);
+        transition: transform 0.25s ease;
+        z-index: 900;
+    }
+
+    .channel-list.is-open {
+        transform: translateY(0);
+    }
+
+    .drawer-backdrop.is-visible {
+        display: block;
+    }
+
+    .channel-item {
+        padding: 12px;
+    }
+
+    video {
+        min-height: 40vh;
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+
+    html,
+    body {
+        background-color: #1a1a1a;
+    }
+
+    .container {
+        background: #222;
+        color: #e0e0e0;
+    }
+
+    h1 {
+        color: #e0e0e0;
+    }
+
+    #playlist-url {
+        background-color: #333;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+
+    #load-btn {
+        background-color: #0d6efd;
+    }
+
+    #load-btn:hover {
+        background-color: #0a58ca;
+    }
+
+    .channel-list {
+        border-color: #444;
+        background: #2a2a2a;
+    }
+
+    .predefined-playlists {
+        border-color: #444;
+        background: #2a2a2a;
+    }
+
+    .predefined-playlists h3 {
+        color: #e0e0e0;
+    }
+
+    .playlist-item {
+        background: #333;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+
+    .playlist-item:hover {
+        background: #1e3a5f;
+        border-color: #0d6efd;
+    }
+
+    .playlist-item small {
+        color: #aaa;
+    }
+
+    .channel-item {
+        border-bottom-color: #444;
+        color: #e0e0e0;
+    }
+
+    .channel-item:hover {
+        background-color: #333;
+    }
+
+    .channel-item.active {
+        background-color: #3a3a3a;
+    }
+
+    .message-loading,
+    .message-empty {
+        color: #e0e0e0;
+    }
+
+    .channel-group {
+        color: #aaa;
+    }
+
+    .channel-logo-fallback {
+        background: #444;
+        color: #bbb;
+    }
+
+    .drawer-backdrop {
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+    .channel-list {
+        background: #222;
+    }
+}
