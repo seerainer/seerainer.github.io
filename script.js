@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nojs) nojs.remove();
 
     const fsname = '\uD83E\uDEAA Name: Philipp Seerainer';
-    const fingertext = '\uD83D\uDD11 PGP fingerprint: ';
+    const fingertext = '\uD83D\uDD11 PGP: ';
     const fingerprint = '84FA F855 8FA4 4808 B14E 9CB0 AE20 3D4D 94E2 286D';
 
     const projects = [
@@ -257,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             finger.appendChild(newContent);
             finger.className = themeElement;
             finger.classList.add(prefersDarkScheme ? darkTheme : lightTheme);
+            finger.title = 'PGP Fingerprint';
             textElement.append(link, document.createElement('br'), fingertext, finger, pgp);
             themeButton.disabled = false;
         }
