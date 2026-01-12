@@ -338,7 +338,7 @@ pre.dark-theme {
     margin: 24px auto 8px;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:720px) {
     h1 {
         font-size: 2em;
     }
