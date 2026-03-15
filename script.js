@@ -78,18 +78,18 @@ document.addEventListener('DOMContentLoaded', () => {
             emoji: '\uD83D\uDCCA'
         },
         {
-            name: 'ChessGame',
-            description: 'Chess with AI engine',
-            language: 'Java',
-            url: 'https://github.com/seerainer/ChessGame',
-            emoji: '\u265F\uFE0F'
-        },
-        {
             name: '2_Player_Snake',
             description: 'Snake for 2 players',
             language: 'JavaScript',
             url: 'https://github.com/seerainer/2_Player_Snake',
             emoji: '\uD83D\uDC0D'
+        },
+        {
+            name: 'ChessGame',
+            description: 'Chess with AI engine',
+            language: 'Java',
+            url: 'https://github.com/seerainer/ChessGame',
+            emoji: '\u265F\uFE0F'
         },
         {
             name: 'Dupes2Trash',
@@ -106,18 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
             emoji: '\uD83D\uDD25'
         },
         {
-            name: 'SnakeGame',
-            description: 'Snake',
-            language: 'Java',
-            url: 'https://github.com/seerainer/SnakeGame',
-            emoji: '\uD83D\uDC0D'
-        },
-        {
             name: 'TextEdit',
             description: 'Simple text editor',
             language: 'Java',
             url: 'https://github.com/seerainer/TextEdit',
             emoji: '\uD83D\uDCDD'
+        },
+        {
+            name: 'SnakeGame',
+            description: 'Snake',
+            language: 'Java',
+            url: 'https://github.com/seerainer/SnakeGame',
+            emoji: '\uD83D\uDC0D'
         },
         {
             name: 'RsJarLauncher',
