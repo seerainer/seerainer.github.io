@@ -97,6 +97,10 @@ h1 {
 
 #header-text:hover {
     background: linear-gradient(90deg, #c90 0%, #09c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .tabs {
